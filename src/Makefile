@@ -56,6 +56,7 @@ targets: $(LIBDIR)/$(ANNLIB)
 $(LIBDIR)/$(ANNLIB): $(OBJECTS)
 	$(MAKELIB) $(ANNLIB) $(OBJECTS)
 	$(RANLIB) $(ANNLIB)
+	mkdir -p $(LIBDIR)
 	mv $(ANNLIB) $(LIBDIR)
 
 #-----------------------------------------------------------------------------

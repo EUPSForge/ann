@@ -68,6 +68,7 @@ targets: $(BINDIR)/$(ANNTEST)
 
 $(BINDIR)/$(ANNTEST): $(TESTOBJECTS) $(LIBDIR)/$(ANNLIB)
 	$(C++) $(TESTOBJECTS) -o $(ANNTEST) $(LDFLAGS) $(ANNLIBS) $(OTHERLIBS)
+	mkdir -p $(BINDIR)
 	mv $(ANNTEST) $(BINDIR)
 
 #-----------------------------------------------------------------------------

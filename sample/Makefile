@@ -65,6 +65,7 @@ targets: $(BINDIR)/$(ANNSAMP)
 
 $(BINDIR)/$(ANNSAMP): $(SAMPOBJECTS) $(LIBDIR)/$(ANNLIB)
 	$(C++) $(SAMPOBJECTS) -o $(ANNSAMP) $(LDFLAGS) $(ANNLIBS)
+	mkdir -p $(BINDIR)
 	mv $(ANNSAMP) $(BINDIR)
 
 #-----------------------------------------------------------------------------

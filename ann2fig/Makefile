@@ -62,6 +62,7 @@ targets: $(BINDIR)/$(ANN2FIG)
 
 $(BINDIR)/$(ANN2FIG): $(OBJECTS)
 	$(C++) $(OBJECTS) -o $(ANN2FIG) $(LDFLAGS) $(ANNLIBS) $(OTHERLIBS)
+	mkdir -p $(BINDIR)
 	mv $(ANN2FIG) $(BINDIR)
 
 #-----------------------------------------------------------------------------
