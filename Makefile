@@ -28,6 +28,8 @@
 #	Added macosx-g++ target
 #-----------------------------------------------------------------------------
 
+prefix ?= /usr/local
+
 #-----------------------------------------------------------------------------
 # default: list the options
 # The following legacy targets are also available.
@@ -61,6 +63,15 @@ alpha-g++ macosx-g++ linux-g++ sgi sunos4 sunos4-g++ sunos5 sunos5-g++ sunos5-g+
 	cd test ; $(MAKE) $@
 	cd sample ; $(MAKE) $@
 	cd ann2fig ; $(MAKE) $@
+
+#-----------------------------------------------------------------------------
+# install lib and header files to target directory (default: /usr/local)
+#-----------------------------------------------------------------------------
+install:
+	mkdir -p $(prefix)
+	mkdir -p $(prefix)/{lib,include}
+	cp lib/* $(prefix)/lib
+	cp -r include/ANN $(prefix)/include
 
 #-----------------------------------------------------------------------------
 # Remove .o files and core files
